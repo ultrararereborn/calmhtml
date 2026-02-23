@@ -2,21 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Looping Text Carousel</title>
+<title>Minimal Looping Text Carousel</title>
 
 <style>
 body {
   margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
   font-family: sans-serif;
 }
 
 .container {
-  width: 400px;
   text-align: center;
 }
 
@@ -29,22 +23,22 @@ body {
 }
 
 textarea {
-  width: 100%;
-  height: 120px;
-  padding: 12px;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
   resize: none;
   outline: none;
   background: white;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 10px;
   background: none;
   border: none;
-  font-size: 26px;
+  font-size: 24px;
   cursor: pointer;
   color: #555;
 }
@@ -60,11 +54,11 @@ button:hover {
 <div class="container">
 
   <div class="slide active">
-    <textarea placeholder="Write your first thought..."></textarea>
+    <textarea placeholder="First thought..."></textarea>
   </div>
 
   <div class="slide">
-    <textarea placeholder="What comes next?"></textarea>
+    <textarea placeholder="Next thought..."></textarea>
   </div>
 
   <div class="slide">
@@ -82,10 +76,7 @@ const nextBtn = document.getElementById("nextBtn");
 
 nextBtn.addEventListener("click", () => {
   slides[currentSlide].classList.remove("active");
-
-  // 🔁 This makes it loop
-  currentSlide = (currentSlide + 1) % slides.length;
-
+  currentSlide = (currentSlide + 1) % slides.length; // loop
   slides[currentSlide].classList.add("active");
 });
 </script>
